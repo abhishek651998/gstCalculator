@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" >
+
+    
+</head>
+<body>
+
+  <span class="form" > 
+      <h1>GST Calculator</h1>
+     <label>Taxable value : </label> <br>
+     <input type="number" id="id1" > <br>
+
+     <label>GST %: </label> <br>
+     <input type="number" id="id2" required > <br>
+     
+     <h2 id="div1" ></h2> 
+     <h2 id="div2" ></h2>  
+     <h2 id="div3" ></h2>
+     <h2 id="div4" ></h2> <br>
+
+
+    
+    
+     <input  type="reset"  value="Reset"class="reset"  onclick="sampleFunction()" >
+     <input type="submit" value="Calculate" class="reset" onclick="calculate()">
+ </span>
+   
+  
+
+    <script>
+
+        function calculate() {
+
+            var a = parseInt(document.getElementById("id1").value);
+            var b = parseInt(document.getElementById("id2").value);
+
+            var gst1 = (a/100)*b/2
+            var cgst = gst1.toFixed(2)
+
+            var sgst = gst1.toFixed(2)
+
+
+            var gst2 = gst1+gst1
+            var gst =  gst2.toFixed(2)    
+
+            var TIV = a+gst2
+
+
+
+
+            document.getElementById("div1").innerHTML="CGST => "+cgst
+
+            document.getElementById("div2").innerHTML="SGST => "+sgst 
+
+
+            document.getElementById("div3").innerHTML="Total Gst => "+gst
+            document.getElementById("div4").innerHTML="Total Invoice Value => "+TIV
+
+            
+        }
+
+        function sampleFunction() 
+        {
+         location.reload();
+        }
+
+
+      
+   
+
+    </script>
+
+
+   
+</html>
